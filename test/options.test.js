@@ -19,3 +19,15 @@ exports.stringIsNotAnOption = function(test) {
     test.equal(false, options.isOption("surrender"));
     test.done();
 };
+
+exports.mappingOverNoneHasNoEffect = function(test) {
+    test.equal(options.none, options.none.map(function() { return true }));
+    test.done();
+};
+
+exports.mappingOverSomeAppliesFunctionToValue = function(test) {
+    test.deepEqual(options.some(4), options.some(2).map(function(value) {
+        return value * value; 
+    }));
+    test.done();
+};
