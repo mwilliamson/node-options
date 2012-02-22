@@ -8,3 +8,7 @@ exports.some = function(value) {
 var Some = function(value) {
     this._value = value;
 };
+
+exports.isOption = function(value) {
+    return value === exports.none || value instanceof Some;
+};
