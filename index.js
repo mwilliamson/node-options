@@ -1,6 +1,9 @@
 exports.none = {
     map: function() {
         return exports.none;
+    },
+    toArray: function() {
+        return [];
     }
 };
 
@@ -14,6 +17,10 @@ var Some = function(value) {
 
 Some.prototype.map = function(func) {
     return new Some(func(this._value));
+};
+
+Some.prototype.toArray = function() {
+    return [this._value];
 };
 
 exports.isOption = function(value) {

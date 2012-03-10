@@ -31,3 +31,13 @@ exports.mappingOverSomeAppliesFunctionToValue = function(test) {
     }));
     test.done();
 };
+
+exports.noneToArrayIsEmptyArray = function(test) {
+    test.deepEqual([], options.none.toArray());
+    test.done();
+};
+
+exports.someToArrayIsSingleElementArray = function(test) {
+    test.deepEqual(["apple"], options.some("apple").toArray());
+    test.done();
+};
