@@ -1,11 +1,11 @@
-exports.none = {
+exports.none = Object.create({
     map: function() {
         return exports.none;
     },
     toArray: function() {
         return [];
     }
-};
+});
 
 exports.some = function(value) {
     return new Some(value);
