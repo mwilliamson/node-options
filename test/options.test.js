@@ -41,3 +41,13 @@ exports.someToArrayIsSingleElementArray = function(test) {
     test.deepEqual(["apple"], options.some("apple").toArray());
     test.done();
 };
+
+exports.noneOrElseReturnsArgument = function(test) {
+    test.deepEqual(4, options.none.orElse(4));
+    test.done();
+};
+
+exports.someOrElseReturnsTheCurrentValue = function(test) {
+    test.deepEqual(1, options.some(1).orElse(4));
+    test.done();
+};

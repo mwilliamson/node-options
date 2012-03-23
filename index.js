@@ -4,6 +4,9 @@ exports.none = Object.create({
     },
     toArray: function() {
         return [];
+    },
+    orElse: function(value) {
+        return value;
     }
 });
 
@@ -21,6 +24,10 @@ Some.prototype.map = function(func) {
 
 Some.prototype.toArray = function() {
     return [this._value];
+};
+
+Some.prototype.orElse = function(value) {
+    return this._value;
 };
 
 exports.isOption = function(value) {
