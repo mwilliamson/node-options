@@ -5,5 +5,9 @@
     },
     "devDependencies": {
         "nodeunit": "latest"
-    }
+    },
+    "keywords": [
+        "option",
+        "maybe"
+    ]
 }
