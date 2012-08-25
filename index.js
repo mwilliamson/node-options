@@ -6,7 +6,18 @@ exports.none = Object.create({
         return [];
     },
     orElse: function(value) {
-        return value;
+        if (typeof(value) == "function") {
+            return value();
+        } else {
+            return value;
+        }
+    },
+    valueOrElse: function(value) {
+        if (typeof(value) == "function") {
+            return value();
+        } else {
+            return value;
+        }
     }
 });
 
@@ -27,6 +38,10 @@ Some.prototype.toArray = function() {
 };
 
 Some.prototype.orElse = function(value) {
+    return this;
+};
+
+Some.prototype.valueOrElse = function(value) {
     return this._value;
 };
 

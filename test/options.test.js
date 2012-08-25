@@ -42,12 +42,32 @@ exports.someToArrayIsSingleElementArray = function(test) {
     test.done();
 };
 
-exports.noneOrElseReturnsArgument = function(test) {
-    test.deepEqual(4, options.none.orElse(4));
+exports.noneValueOrElseCallsPassedValueIfItsAFunction = function(test) {
+    test.deepEqual(4, options.none.valueOrElse(function() { return 4; }));
     test.done();
 };
 
-exports.someOrElseReturnsTheCurrentValue = function(test) {
-    test.deepEqual(1, options.some(1).orElse(4));
+exports.noneValueOrElseReturnsArgumentIfItsNotAFunction = function(test) {
+    test.deepEqual(4, options.none.valueOrElse(4));
+    test.done();
+};
+
+exports.someValueOrElseReturnsWrappedValue = function(test) {
+    test.deepEqual(1, options.some(1).valueOrElse(function() { return 4; }));
+    test.done();
+};
+
+exports.noneOrElseReturnsArgumentIfItsNotAFunction = function(test) {
+    test.deepEqual(options.some(4), options.none.orElse(options.some(4)));
+    test.done();
+};
+
+exports.noneOrElseCallsArgumentIfItsAFunction = function(test) {
+    test.deepEqual(options.some(4), options.none.orElse(function() { return options.some(4); }));
+    test.done();
+};
+
+exports.someOrElseReturnsTheCurrentOption = function(test) {
+    test.deepEqual(options.some(1), options.some(1).orElse(4));
     test.done();
 };
