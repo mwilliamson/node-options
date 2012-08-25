@@ -5,21 +5,17 @@ exports.none = Object.create({
     toArray: function() {
         return [];
     },
-    orElse: function(value) {
-        if (typeof(value) == "function") {
-            return value();
-        } else {
-            return value;
-        }
-    },
-    valueOrElse: function(value) {
-        if (typeof(value) == "function") {
-            return value();
-        } else {
-            return value;
-        }
-    }
+    orElse: callOrReturn,
+    valueOrElse: callOrReturn
 });
+
+function callOrReturn(value) {
+    if (typeof(value) == "function") {
+        return value();
+    } else {
+        return value;
+    }
+}
 
 exports.some = function(value) {
     return new Some(value);
