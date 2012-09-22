@@ -47,12 +47,12 @@ If `other` is not a function (`other` conventionally being another option):
 ### valueOrElse(*other*)
 
 If `other` is a function:
-* `some(value).orElse(other)` returns `value`
-* `none.orElse(other)` returns `other()`
+* `some(value).valueOrElse(other)` returns `value`
+* `none.valueOrElse(other)` returns `other()`
 
 If `other` is not a function:
-* `some(value).orElse(other)` returns `value`
-* `none.orElse(other)` returns `other`
+* `some(value).valueOrElse(other)` returns `value`
+* `none.valueOrElse(other)` returns `other`
 
 ## Installation
 
