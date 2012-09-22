@@ -37,20 +37,24 @@ provide a number of functions that help with manipulating optional values.
 ### orElse(*other*)
 
 If `other` is a function (`other` conventionally returning another option):
+
 * `some(value).orElse(other)` returns `some(value)`
 * `none.orElse(other)` returns `other()`
 
 If `other` is not a function (`other` conventionally being another option):
+
 * `some(value).orElse(other)` returns `some(value)`
 * `none.orElse(other)` returns `other`
 
 ### valueOrElse(*other*)
 
 If `other` is a function:
+
 * `some(value).valueOrElse(other)` returns `value`
 * `none.valueOrElse(other)` returns `other()`
 
 If `other` is not a function:
+
 * `some(value).valueOrElse(other)` returns `value`
 * `none.valueOrElse(other)` returns `other`
 
