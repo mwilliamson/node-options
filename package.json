@@ -1,6 +1,6 @@
 {
     "name": "option",
-    "version": "0.2.0",
+    "version": "0.2.1",
     "author": "Michael Williamson <mike@zwobble.org>",
     "description": "The option type, also known as the maybe type, for JavaScript",
     "license": "BSD",
