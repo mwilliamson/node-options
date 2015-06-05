@@ -58,6 +58,13 @@ If `other` is not a function:
 * `some(value).valueOrElse(other)` returns `value`
 * `none.valueOrElse(other)` returns `other`
 
+## Static functions
+
+### option.fromNullable()
+
+* `option.fromNullable(null)` or `option.fromNullable(undefined)` returns `option.none`
+* `option.fromNullable(5)` returns `option.some(5)`
+
 ## Installation
 
     npm install option

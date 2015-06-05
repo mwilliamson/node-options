@@ -44,3 +44,10 @@ Some.prototype.valueOrElse = function(value) {
 exports.isOption = function(value) {
     return value === exports.none || value instanceof Some;
 };
+
+exports.fromNullable = function(value) {
+    if (value == null) {
+        return exports.none;
+    }
+    return new Some(value);
+}

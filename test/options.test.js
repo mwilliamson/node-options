@@ -20,6 +20,17 @@ exports.stringIsNotAnOption = function(test) {
     test.done();
 };
 
+exports.fromNullableNull = function(test) {
+    test.deepEqual(options.none, options.fromNullable(null));
+    test.deepEqual(options.none, options.fromNullable(undefined));
+    test.done();
+};
+
+exports.fromNullableValue = function(test) {
+    test.deepEqual(options.some(5), options.fromNullable(5));
+    test.done();
+};
+
 exports.mappingOverNoneHasNoEffect = function(test) {
     test.equal(options.none, options.none.map(function() { return true }));
     test.done();
