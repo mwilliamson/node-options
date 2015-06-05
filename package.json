@@ -4,6 +4,9 @@
     "author": "Michael Williamson <mike@zwobble.org>",
     "description": "The option type, also known as the maybe type, for JavaScript",
     "license": "BSD",
+    "scripts": {
+        "test": "nodeunit"
+    },
     "repository": {
         "type": "git",
         "url": "https://github.com/mwilliamson/node-options.git"
