@@ -2,6 +2,12 @@ exports.none = Object.create({
     value: function() {
         throw new Error('Called value on none');
     },
+    isNone: function(){
+        return true;
+    },
+    isSome: function(){
+        return false;
+    },
     map: function() {
         return exports.none;
     },
@@ -30,6 +36,14 @@ var Some = function(value) {
 
 Some.prototype.value = function() {
     return this._value;
+};
+
+Some.prototype.isNone = function(){
+    return false;
+};
+
+Some.prototype.isSome = function(){
+    return true;
 };
 
 Some.prototype.map = function(func) {

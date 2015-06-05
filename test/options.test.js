@@ -10,6 +10,23 @@ exports.someIsAnOption = function(test) {
     test.done();
 };
 
+exports.noneIsNone = function(test) {
+    test.equal(true, options.none.isNone());
+    test.equal(false, options.none.isSome());
+    test.done();
+};
+
+exports.noneIsSome = function(test) {
+    test.equal(false, options.some(1).isNone());
+    test.equal(true, options.some(1).isSome());
+    test.done();
+};
+
+exports.someIsAnOption = function(test) {
+    test.equal(true, options.isOption(options.some(4)));
+    test.done();
+};
+
 exports.nullIsNotAnOption = function(test) {
     test.equal(false, options.isOption(null));
     test.done();
