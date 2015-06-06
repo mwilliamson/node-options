@@ -5,7 +5,7 @@
     "description": "The option type, also known as the maybe type, for JavaScript",
     "license": "BSD",
     "scripts": {
-        "test": "nodeunit"
+        "test": "nodeunit test"
     },
     "repository": {
         "type": "git",
