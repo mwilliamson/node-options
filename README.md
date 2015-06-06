@@ -58,7 +58,7 @@ If `other` is not a function:
 * `some(value).valueOrElse(other)` returns `value`
 * `none.valueOrElse(other)` returns `other`
 
-## Static functions
+## Functions
 
 * `option.isOption(value)` returns `true` if `value` is `option.none` or `option.some(x)`.
 
