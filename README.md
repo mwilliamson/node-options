@@ -66,8 +66,9 @@ If `other` is not a function:
 
 ### option.fromNullable(*value*)
 
-* `option.fromNullable(null)` or `option.fromNullable(undefined)` returns `option.none`
-* `option.fromNullable(5)` returns `option.some(5)`
+* If `value` is `null` or `undefined`, `option.fromNullable(value)` returns `option.none`.
+* Otherwise, returns `option.some(value)`.
+  For instance, `option.fromNullable(5)` returns `option.some(5)`.
 
 ## Installation
 
