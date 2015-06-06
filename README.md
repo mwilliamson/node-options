@@ -60,6 +60,8 @@ If `other` is not a function:
 
 ## Functions
 
+### option.isOption(*value*)
+
 * `option.isOption(value)` returns `true` if `value` is `option.none` or `option.some(x)`.
 
 ### option.fromNullable()
