@@ -64,7 +64,7 @@ If `other` is not a function:
 
 * `option.isOption(value)` returns `true` if `value` is `option.none` or `option.some(x)`.
 
-### option.fromNullable()
+### option.fromNullable(*value*)
 
 * `option.fromNullable(null)` or `option.fromNullable(undefined)` returns `option.none`
 * `option.fromNullable(5)` returns `option.some(5)`
