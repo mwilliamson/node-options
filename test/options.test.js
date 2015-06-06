@@ -20,13 +20,17 @@ exports.stringIsNotAnOption = function(test) {
     test.done();
 };
 
-exports.fromNullableNull = function(test) {
+exports.fromNullableConvertsNullToNone = function(test) {
     test.deepEqual(options.none, options.fromNullable(null));
+    test.done();
+};
+
+exports.fromNullableConvertsUndefinedToNone = function(test) {
     test.deepEqual(options.none, options.fromNullable(undefined));
     test.done();
 };
 
-exports.fromNullableValue = function(test) {
+exports.fromNullableConvertsNumberToSome = function(test) {
     test.deepEqual(options.some(5), options.fromNullable(5));
     test.done();
 };
