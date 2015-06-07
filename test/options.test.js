@@ -87,14 +87,14 @@ exports.someOrElseReturnsTheCurrentOption = function(test) {
     test.done();
 };
 
-exports.noneGet = function(test) {
+exports.callingValueOnNoneRaisesError = function(test) {
     test.throws(function(){
-        options.none.get();
-    }, /Called get on None/);
+        options.none.value();
+    }, /Called value on none/);
     test.done();
 };
 
-exports.someGet = function(test) {
-    test.deepEqual(4, options.some(4).get());
+exports.callingValueOnSomeReturnsValue = function(test) {
+    test.deepEqual(4, options.some(4).value());
     test.done();
 };

@@ -24,10 +24,10 @@ provide a number of functions that help with manipulating optional values.
 
 ## Methods
 
-### get()
+### value()
 
-* `some(value).get()` returns `value`
-* `none.get()` throws an error
+* `some(value).value()` returns `value`
+* `none.value()` throws an error
 
 ### map(*func*)
 

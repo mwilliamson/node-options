@@ -1,6 +1,6 @@
 exports.none = Object.create({
-    get: function() {
-        throw new Error('Called get on None');
+    value: function() {
+        throw new Error('Called value on none');
     },
     map: function() {
         return exports.none;
@@ -28,7 +28,7 @@ var Some = function(value) {
     this._value = value;
 };
 
-Some.prototype.get = function() {
+Some.prototype.value = function() {
     return this._value;
 };
 
