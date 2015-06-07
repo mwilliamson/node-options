@@ -86,3 +86,15 @@ exports.someOrElseReturnsTheCurrentOption = function(test) {
     test.deepEqual(options.some(1), options.some(1).orElse(4));
     test.done();
 };
+
+exports.noneGet = function(test) {
+    test.throws(function(){
+        options.none.get();
+    }, /Called get on None/);
+    test.done();
+};
+
+exports.someGet = function(test) {
+    test.deepEqual(4, options.some(4).get());
+    test.done();
+};
