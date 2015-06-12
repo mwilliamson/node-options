@@ -10,6 +10,16 @@ exports.someIsAnOption = function(test) {
     test.done();
 };
 
+exports.nullIsNotAnOption = function(test) {
+    test.equal(false, options.isOption(null));
+    test.done();
+};
+
+exports.stringIsNotAnOption = function(test) {
+    test.equal(false, options.isOption("surrender"));
+    test.done();
+};
+
 exports["none.isNone() returns true"] = function(test) {
     test.equal(true, options.none.isNone());
     test.done();
@@ -27,16 +37,6 @@ exports["some(_).isNone() returns false"] = function(test) {
 
 exports["some(_).isSome() returns true"] = function(test) {
     test.equal(true, options.some(1).isSome());
-    test.done();
-};
-
-exports.nullIsNotAnOption = function(test) {
-    test.equal(false, options.isOption(null));
-    test.done();
-};
-
-exports.stringIsNotAnOption = function(test) {
-    test.equal(false, options.isOption("surrender"));
     test.done();
 };
 
