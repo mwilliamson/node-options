@@ -26,10 +26,10 @@ provide a number of functions that help with manipulating optional values.
 
 ### isNone() and isSome()
 
-* `some(value).isNone()` returns false
-* `some(value).isSome()` returns true
-* `none.isNone()` returns true
-* `none.isSome()` returns false
+* `some(value).isNone()` returns `false`
+* `some(value).isSome()` returns `true`
+* `none.isNone()` returns `true`
+* `none.isSome()` returns `false`
 
 ### value()
 
