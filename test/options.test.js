@@ -10,14 +10,22 @@ exports.someIsAnOption = function(test) {
     test.done();
 };
 
-exports.noneIsNone = function(test) {
+exports["none.isNone() returns true"] = function(test) {
     test.equal(true, options.none.isNone());
+    test.done();
+};
+
+exports["none.isSome() returns false"] = function(test) {
     test.equal(false, options.none.isSome());
     test.done();
 };
 
-exports.noneIsSome = function(test) {
+exports["some(_).isNone() returns false"] = function(test) {
     test.equal(false, options.some(1).isNone());
+    test.done();
+};
+
+exports["some(_).isSome() returns true"] = function(test) {
     test.equal(true, options.some(1).isSome());
     test.done();
 };
