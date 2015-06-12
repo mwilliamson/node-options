@@ -30,11 +30,6 @@ exports["some(_).isSome() returns true"] = function(test) {
     test.done();
 };
 
-exports.someIsAnOption = function(test) {
-    test.equal(true, options.isOption(options.some(4)));
-    test.done();
-};
-
 exports.nullIsNotAnOption = function(test) {
     test.equal(false, options.isOption(null));
     test.done();
