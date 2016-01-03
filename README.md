@@ -41,6 +41,12 @@ provide a number of functions that help with manipulating optional values.
 * `some(value).map(func)` returns `some(func(value))`
 * `none.map(func)` returns `none`
 
+### flatMap(*func*)
+
+* `some(value).map(func)` returns `func(value)`
+* `none.map(func)` returns `none`
+
+
 ### toArray()
 
 * `some(value).toArray()` returns `[some]`
