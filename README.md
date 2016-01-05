@@ -43,8 +43,8 @@ provide a number of functions that help with manipulating optional values.
 
 ### flatMap(*func*)
 
-* `some(value).map(func)` returns `func(value)`
-* `none.map(func)` returns `none`
+* `some(value).flatMap(func)` returns `func(value)`
+* `none.flatMap(func)` returns `none`
 
 
 ### toArray()
