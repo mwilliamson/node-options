@@ -67,32 +67,28 @@ exports.mappingOverSomeAppliesFunctionToValue = function(test) {
     test.done();
 };
 
-
-exports.flatMapOnNoneToNone = function(test) {
+exports["none.flatMap(_) returns none"] = function(test) {
     test.deepEqual(options.none, options.none.flatMap(function(value) {
-        return options.some('not reachable code');
+        return options.some("apple");
     }));
     test.done();
 };
 
 
-
-exports.flatMapToNone = function(test) {
-    test.deepEqual(options.none, options.some('some-data').flatMap(function(value) {
+exports["when func(value) is none, then some(value).flatMap(func) returns none"] = function(test) {
+    test.deepEqual(options.none, options.some(2).flatMap(function(value) {
         return options.none;
     }));
     test.done();
 };
 
 
-exports.flatMapToSome = function(test) {
-    test.deepEqual(options.some('Hi Dan'), options.some('Dan').flatMap(function(value) {
-        return options.some('Hi ' + value);
+exports["when func(value) is some(result), then some(value).flatMap(func) returns some(result)"] = function(test) {
+    test.deepEqual(options.some(4), options.some(2).flatMap(function(value) {
+        return options.some(value * value);
     }));
     test.done();
 };
-
-
 
 exports.noneToArrayIsEmptyArray = function(test) {
     test.deepEqual([], options.none.toArray());
