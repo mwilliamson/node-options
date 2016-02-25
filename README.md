@@ -43,6 +43,8 @@ provide a number of functions that help with manipulating optional values.
 
 ### flatMap(*func*)
 
+Conventionally used when `func` returns another option.
+
 * `some(value).flatMap(func)` returns `func(value)`
 * `none.flatMap(func)` returns `none`
 
