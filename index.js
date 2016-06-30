@@ -79,3 +79,5 @@ exports.fromNullable = function(value) {
     }
     return new Some(value);
 }
+
+exports.of = exports.fromNullable;
