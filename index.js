@@ -60,10 +60,8 @@ Some.prototype.flatMap = function(func) {
     return func(this._value);
 };
 
-Some.prototype.filter = function(f) {
-    return this.flatMap(function(x) {
-        return f(x) ? exports.some(x) : exports.none;
-    });
+Some.prototype.filter = function(predicate) {
+    return predicate(this._value) ? this : exports.none;
 };
 
 Some.prototype.toArray = function() {

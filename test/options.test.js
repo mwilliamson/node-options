@@ -142,7 +142,7 @@ exports.callingValueOnSomeReturnsValue = function(test) {
     test.done();
 };
 
-exports.filteringNoneReturnsNone = function(test) {
+exports["none.filter returns none"] = function(test) {
     function equals3(x) {
         return x === 3;
     }
@@ -151,7 +151,7 @@ exports.filteringNoneReturnsNone = function(test) {
     test.done();
 };
 
-exports.filteringSomeReturnsIdentityIfPredicateIsTrue = function(test) {
+exports["when predicate(value) is true, some(value).filter(predicate) returns some(value)"] = function(test) {
     var some3 = options.some(3);
 
     function equals3(x) {
@@ -162,7 +162,7 @@ exports.filteringSomeReturnsIdentityIfPredicateIsTrue = function(test) {
     test.done();
 };
 
-exports.filteringSomeReturnsNoneIfPredicateIsFalse = function(test) {
+exports["when predicate(value) is false, some(value).filter(predicate) returns none"] = function(test) {
     var some11 = options.some(11);
 
     function equals3(x) {
