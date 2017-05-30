@@ -48,6 +48,12 @@ Conventionally used when `func` returns another option.
 * `some(value).flatMap(func)` returns `func(value)`
 * `none.flatMap(func)` returns `none`
 
+### filter(func)
+
+* `some(value).filter(func)` returns:
+  * `some(value)` if `func(value) === true`
+  * `none` if `func(value) === false`
+* `none.filter(func)` returns `none`
 
 ### toArray()
 
