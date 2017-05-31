@@ -141,3 +141,34 @@ exports.callingValueOnSomeReturnsValue = function(test) {
     test.deepEqual(4, options.some(4).value());
     test.done();
 };
+
+exports["none.filter returns none"] = function(test) {
+    function equals3(x) {
+        return x === 3;
+    }
+
+    test.deepEqual(options.none.filter(equals3), options.none);
+    test.done();
+};
+
+exports["when predicate(value) is true, some(value).filter(predicate) returns some(value)"] = function(test) {
+    var some3 = options.some(3);
+
+    function equals3(x) {
+        return x === 3;
+    }
+
+    test.deepEqual(some3.filter(equals3), some3);
+    test.done();
+};
+
+exports["when predicate(value) is false, some(value).filter(predicate) returns none"] = function(test) {
+    var some11 = options.some(11);
+
+    function equals3(x) {
+        return x === 3;
+    }
+
+    test.deepEqual(some11.filter(equals3), options.none);
+    test.done();
+};

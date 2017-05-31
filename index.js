@@ -14,6 +14,9 @@ exports.none = Object.create({
     flatMap: function() {
         return exports.none;
     },
+    filter: function() {
+        return exports.none;
+    },
     toArray: function() {
         return [];
     },
@@ -55,6 +58,10 @@ Some.prototype.map = function(func) {
 
 Some.prototype.flatMap = function(func) {
     return func(this._value);
+};
+
+Some.prototype.filter = function(predicate) {
+    return predicate(this._value) ? this : exports.none;
 };
 
 Some.prototype.toArray = function() {
