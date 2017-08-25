@@ -172,3 +172,10 @@ exports["when predicate(value) is false, some(value).filter(predicate) returns n
     test.deepEqual(some11.filter(equals3), options.none);
     test.done();
 };
+
+exports.someMapUndefinedIsNone = function(test) {
+    var some = options.some({});
+
+    test.deepEqual(some.map(_ => _.missingProperty), options.none);
+    test.done();
+}
