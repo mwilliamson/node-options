@@ -53,7 +53,7 @@ Some.prototype.isSome = function() {
 };
 
 Some.prototype.map = function(func) {
-    return new Some(func(this._value));
+    return exports.fromNullable(func(this._value));
 };
 
 Some.prototype.flatMap = function(func) {
