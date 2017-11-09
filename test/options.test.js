@@ -172,3 +172,19 @@ exports["when predicate(value) is false, some(value).filter(predicate) returns n
     test.deepEqual(some11.filter(equals3), options.none);
     test.done();
 };
+
+exports.noneMatchWithCallsFunctionUnderNoneKey = function(test) {
+  test.deepEqual(4, options.none.matchWith({
+    None: function() { return 4; },
+    Some: function(value) { return value; }
+  }));
+  test.done();
+};
+
+exports.someMatchWithCallsFunctionUnderSomeKeyPassingTheValue = function(test) {
+  test.deepEqual(12, options.some(11).matchWith({
+    None: function() { return 4; },
+    Some: function(value) { return value + 1 }
+  }));
+  test.done();
+};

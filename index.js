@@ -21,7 +21,10 @@ exports.none = Object.create({
         return [];
     },
     orElse: callOrReturn,
-    valueOrElse: callOrReturn
+    valueOrElse: callOrReturn,
+    matchWith: function(choices) {
+        return choices.None();
+    }
 });
 
 function callOrReturn(value) {
@@ -74,6 +77,10 @@ Some.prototype.orElse = function(value) {
 
 Some.prototype.valueOrElse = function(value) {
     return this._value;
+};
+
+Some.prototype.matchWith = function(choices) {
+  return choices.Some(this._value);
 };
 
 exports.isOption = function(value) {

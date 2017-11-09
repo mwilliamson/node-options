@@ -84,6 +84,13 @@ If `other` is not a function:
 * `some(value).valueOrElse(other)` returns `value`
 * `none.valueOrElse(other)` returns `other`
 
+### matchWith(*choices*)
+
+`choices` is an object of shape `{ Some: function, None: function }`.
+
+* `some(value).matchWith({ Some: funcA, None: funcB })` returns the result of `funcA(value)`
+* `none.matchWith({ Some: funcA, None: funcB })` returns the result of `funcB()`
+
 ## Functions
 
 ### option.isOption(*value*)
